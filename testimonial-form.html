@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Client Testimonial - MRG Capital</title>
+    <link rel="stylesheet" href="testimonial-form.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-center">
+                <div class="logo-text">MRG CAPITAL</div>
+                <div class="logo-subtext">CREATING WEALTH SIMPLY</div>
+            </div>
+        </div>
+    </nav>
+
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Share Your Experience</h2>
+                <p class="section-subtitle">
+                    We'd love to hear about your journey with MRG Capital. Your feedback helps us serve you better.
+                </p>
+            </div>
+            <div class="form-container">
+                <form id="testimonialForm" class="testimonial-form">
+                    <!-- Profile Picture Section -->
+                    <div class="profile-picture-section">
+                        <div class="picture-container">
+                            <div class="profile-picture" id="profilePicture">
+                                <div class="initials-placeholder" id="initialsPlaceholder">
+                                    <span id="initials">AB</span>
+                                </div>
+                                <img id="picturePreview" style="display: none; width: 100%; height: 100%; object-fit: cover; border-radius: 12px;">
+                            </div>
+                            <div class="picture-actions">
+                                <button type="button" class="btn-upload" id="uploadBtn">
+                                    <span class="upload-icon">📷</span>
+                                    Upload Photo
+                                </button>
+                                <input type="file" id="pictureInput" accept="image/*" style="display: none;">
+                                <button type="button" class="btn-remove" id="removeBtn" style="display: none;">
+                                    Remove
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Name/Designation -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required">*</span></label>
+                            <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Your full name" required>
+                            <span class="error-message" id="fullNameError"></span>
+                        </div>
+                        <div class="form-group">
+                            <label for="designation">Designation <span class="required">*</span></label>
+                            <input type="text" id="designation" name="designation" class="form-control" placeholder="Your designation/title" required>
+                            <span class="error-message" id="designationError"></span>
+                        </div>
+                    </div>
+                    <!-- Company (optional) -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="company">Company</label>
+                            <input type="text" id="company" name="company" class="form-control" placeholder="Your company name (optional)">
+                            <span class="error-message" id="companyError"></span>
+                        </div>
+                    </div>
+                    <!-- Email -->
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input type="email" id="email" name="email" class="form-control" placeholder="your@email.com" required>
+                            <span class="error-message" id="emailError"></span>
+                        </div>
+                    </div>
+                    <!-- Rating -->
+                    <div class="form-group">
+                        <label>Rate Your Experience <span class="required">*</span></label>
+                        <div class="rating-stars" id="ratingStars">
+                            <span class="star" data-value="1">★</span>
+                            <span class="star" data-value="2">★</span>
+                            <span class="star" data-value="3">★</span>
+                            <span class="star" data-value="4">★</span>
+                            <span class="star" data-value="5">★</span>
+                        </div>
+                        <input type="hidden" id="rating" name="rating" value="0" required>
+                        <span class="error-message" id="ratingError"></span>
+                    </div>
+                    <!-- Testimonial -->
+                    <div class="form-group">
+                        <label for="testimonial">Your Testimonial <span class="required">*</span></label>
+                        <textarea id="testimonial" name="testimonial" class="form-control" placeholder="Share your experience with MRG Capital..." rows="6" minlength="50" maxlength="1000" required></textarea>
+                        <div class="char-count">
+                            <span id="charCount">0</span>/1000
+                        </div>
+                        <span class="error-message" id="testimonialError"></span>
+                    </div>
+                    <!-- Checkbox -->
+                    <div class="form-group checkbox-group">
+                        <input type="checkbox" id="agree" name="agree" required>
+                        <label for="agree">I agree to share this testimonial publicly <span class="required">*</span></label>
+                        <span class="error-message" id="agreeError"></span>
+                    </div>
+                    <!-- Submit & Clear -->
+                    <div class="form-actions">
+                        <button type="submit" class="btn btn-primary">Submit Testimonial</button>
+                        <button type="reset" class="btn btn-secondary">Clear</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Modal Overlay (cannot be closed) -->
+    <div class="success-message-overlay" id="successMessageOverlay">
+        <div class="success-message-modal">
+            <div class="checkmark">
+                <svg viewBox="0 0 52 52"><circle cx="26" cy="26" r="25" fill="none" stroke="currentColor" stroke-width="2" /><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="16" stroke-dashoffset="16" d="M14.1 27.2l7.1 7.2 16.7-16.8" style="color: var(--color-primary); animation: checkmarkStroke 0.6s ease-out 0.3s forwards;" /></svg>
+            </div>
+            <h2>Success!</h2>
+            <p>Thank you! Your testimonial has been submitted successfully.</p>
+            <div class="stars-animation">
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+                <span class="star-icon">★</span>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p class="footer-text">© 2025 MRG Capital. All rights reserved. | PMS SEBI Registration: INP000006253 | AIF Registration: INAIF 324-251518 | Custodian: HDFC Bank</p>
+            <p class="footer-disclaimer">Investment in securities market are subject to market risks. Read all related documents carefully before investing. Past performance is not indicative of future results.</p>
+        </div>
+    </footer>
+    <script src="testimonial-form.js"></script>
+</body>
+</html>
